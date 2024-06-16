@@ -1,0 +1,70 @@
+*, html 
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+body 
+  font-family: $font-primary
+  height: 100vh 
+  width: 100%
+  color: $cBlack-10
+
+main 
+  height: 100vh
+  display: grid
+  grid-template-columns: 280px 1fr
+
+.container 
+  width: 100%
+  max-width: 1180px
+  padding: 0 20px
+  margin: 0 auto
+
+.content 
+  padding-top: 30px
+  padding-right: 280px
+
+.top-content 
+  display: flex
+  align-items: center
+  justify-content: space-between
+  margin-bottom: 50px
+
+.greetings 
+  h1 
+    font-size: 25px
+    margin-bottom: 7px
+
+// BUTTONS VARIATION
+.btn, button 
+  outline: none
+  border: none
+  background: none 
+  display: block
+  cursor: pointer
+  font-size: 16px
+  font-family: $font-primary
+  border-radius: 5px
+
+.btn-primary 
+  background: $cOrange
+  color: $cWhite
+  display: flex 
+  gap: 7px
+  align-items: center
+  padding: 10px
+
+.search 
+  display: flex 
+  gap: 10px
+
+input 
+  height: 40px 
+  width: 250px
+  border: 1px solid rgba($cBlack, .10)
+  padding: 10px
+  font-family: $font-primary
+  border-radius: 5px
+
+  &::placeholder
+    font-family: $font-primary

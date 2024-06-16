@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+.sidebar {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+.sidebar .sidebar-logo {
+  height: 80px;
+  padding: 10px 27px;
+  border-bottom: 1px solid rgba(57, 57, 57, 0.1);
+  display: flex;
+  align-items: center;
+}
+.sidebar .sidebar-logo-link {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #393939;
+}
+.sidebar .main-logo {
+  height: 30px;
+  width: 30px;
+}
+.sidebar .sidebar-links {
+  padding: 30px 20px;
+}
+.sidebar .sidebar-link {
+  padding: 10px 15px;
+  display: flex;
+  gap: 12px;
+  color: #fff;
+  text-decoration: none;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.sidebar .sidebar-link.active {
+  background: #FF965B;
+}
+
+.sidebar-right {
+  position: fixed;
+  right: 0;
+  top: 80px;
+  width: 280px;
+  height: 100%;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 30px 20px;
+}
+
+.navbar {
+  height: 80px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  justify-content: space-between;
+}
+.navbar .account-admin {
+  display: flex;
+  gap: 20px;
+}
+.navbar .account-admin .account {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.navbar .account-admin .account-name {
+  font-weight: bold;
+}
+.navbar .account-admin .account-role {
+  font-weight: medium;
+  color: #FF965B;
+  font-size: 14px;
+}
+.navbar .account-admin .account-image {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+.navbar .account-admin .logout {
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  border: 1px solid #FF965B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 150, 91, 0.05);
+}
+
+*, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  height: 100vh;
+  width: 100%;
+  color: #393939;
+}
+
+main {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+}
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.content {
+  padding-top: 30px;
+  padding-right: 280px;
+}
+
+.top-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.greetings h1 {
+  font-size: 25px;
+  margin-bottom: 7px;
+}
+
+.btn, button {
+  outline: none;
+  border: none;
+  background: none;
+  display: block;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background: #FF965B;
+  color: #fff;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  padding: 10px;
+}
+
+.search {
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  height: 40px;
+  width: 250px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  font-family: "Inter", sans-serif;
+  border-radius: 5px;
+}
+input::placeholder {
+  font-family: "Inter", sans-serif;
+}
+
+/*# sourceMappingURL=main.css.map */

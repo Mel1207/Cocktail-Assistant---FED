@@ -1,0 +1,42 @@
+.navbar
+  height: 80px
+  border-bottom: 1px solid rgba($cBlack, .10)
+  display: flex 
+  align-items: center
+  padding: 10px 20px
+  justify-content: space-between
+
+  .account-admin
+    display: flex
+    gap: 20px
+
+    .account 
+      display: flex 
+      align-items: center
+      gap: 10px 
+
+    .account-name 
+      font-weight: bold 
+
+    .account-role 
+      font-weight: medium 
+      color: $cOrange 
+      font-size: 14px
+
+
+    .account-image 
+      height: 40px 
+      width: 40px 
+      border-radius: 100% 
+      object-fit: cover
+    
+    .logout 
+      cursor: pointer
+      height: 40px
+      width: 40px 
+      border-radius: 100%
+      border: 1px solid $cOrange
+      display: flex 
+      align-items: center
+      justify-content: center
+      background: rgba($cOrange, .05)
