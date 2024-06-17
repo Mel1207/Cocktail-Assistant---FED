@@ -8,6 +8,7 @@ body
   height: 100vh 
   width: 100%
   color: $cBlack-10
+  background: $cWhite-10
 
 main 
   height: 100vh
@@ -68,3 +69,42 @@ input
 
   &::placeholder
     font-family: $font-primary
+
+.drink-card 
+  background: $cWhite
+  width: 100%
+  padding: 20px
+  border-radius: 10px
+  margin-bottom: 20px
+  box-shadow: 4px 4px 30px 0px rgba(255,150,91,0.03)
+  -webkit-box-shadow: 4px 4px 30px 0px rgba(255,150,91,0.03)
+  -moz-box-shadow: 4px 4px 30px 0px rgba(255,150,91,0.03)
+  display: flex 
+  gap: 20px
+
+  .drink-thumbnail
+    height: 400px
+    width: 245px
+    border-radius: 10px
+    object-fit: cover
+
+  .drink-details
+    width: 100%
+    // background: red
+
+  .drink-title
+    font-size: 22px
+    font-weight: bold
+    margin-bottom: 2px
+
+  .drink-category
+    font-size: 14px
+    font-weight: 500
+    color: $cBlack-20
+    margin-bottom: 25px
+    display: block
+
+  .drink-instructions
+    margin-bottom: 25px
+    font-size: 14px
+    line-height: 22px
