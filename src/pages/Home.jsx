@@ -3,6 +3,7 @@ import IconSearch from '../assets/icon-search.svg'
 
 const Home = () => {
   const [drinks, setDrinks] = useState([]);
+  const [ingredientList, setIngredientList] = useState([])
 
 
   const handleSearch = async () => {
@@ -14,10 +15,25 @@ const Home = () => {
       }
       const data = await response.json()
       setDrinks(data.drinks)
-      console.log('item search')
+      console.log(data.drinks)
     } catch (error) {
       console.log('error fetching data', error)
     }
+  }
+
+  const handleAddToShop = (item) => {
+    console.log('item added')
+    const extractedIngredients = []
+
+    for(let i = 1; i <= 15; i++) {
+      const ingredient = item[`strIngredient${i}`]
+
+      if(ingredient) {
+        extractedIngredients.push(ingredient)
+      }
+    }
+
+    setIngredientList(extractedIngredients)
   }
 
   
@@ -27,6 +43,9 @@ const Home = () => {
         <div className='greetings'>
           <h1>Hello Mel👋</h1>
           <p>What do you want to order?</p>
+          {ingredientList.map(item => (
+            <p key={item}>{item}</p>
+          ))}
         </div>
         <div className="search">
           <input type='text' placeholder='Search...'/>
@@ -45,7 +64,22 @@ const Home = () => {
                 <p className='drink-title'>{item.strDrink}</p>
                 <span className='drink-category'>{item.strCategory}</span>
                 <p className='drink-instructions'>{item.strInstructions}</p>
-                <button className='btn btn-primary'>Add to shopping list</button>
+                <p>{item.strIngredient1}</p>
+                <p>{item.strIngredient2}</p>
+                <p>{item.strIngredient3}</p>
+                <p>{item.strIngredient4}</p>
+                <p>{item.strIngredient5}</p>
+                <p>{item.strIngredient6}</p>
+                <p>{item.strIngredient7}</p>
+                <p>{item.strIngredient8}</p>
+                <p>{item.strIngredient9}</p>
+                <p>{item.strIngredient10}</p>
+                <p>{item.strIngredient11}</p>
+                <p>{item.strIngredient12}</p>
+                <p>{item.strIngredient13}</p>
+                <p>{item.strIngredient14}</p>
+                <p>{item.strIngredient15}</p>
+                <button className='btn btn-primary' onClick={() => handleAddToShop(item)}>Add to shopping list</button>
               </div>
             </div>
           ))}

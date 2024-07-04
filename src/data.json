@@ -1,0 +1,46 @@
+{
+  "drinks": [
+    {
+      "idDrink": "11007",
+      "strDrink": "Margarita",
+      "strInstructions": "Rub the rim of the glass with the lime slice to make the salt stick to it. Take care to moisten only the outer rim and sprinkle the salt on it. The salt should present to the lips of the imbiber and never mix into the cocktail. Shake the other ingredients with ice, then carefully pour into the glass.",
+      "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg",
+      "strIngredient1": "Tequila",
+      "strIngredient2": "Triple sec",
+      "strIngredient3": "Lime juice",
+      "strIngredient4": "Salt",
+      "strIngredient5": null,
+      "strIngredient6": null,
+      "strIngredient7": null,
+      "strIngredient8": null,
+      "strIngredient9": null,
+      "strIngredient10": null,
+      "strIngredient11": null,
+      "strIngredient12": null,
+      "strIngredient13": null,
+      "strIngredient14": null,
+      "strIngredient15": null
+    },
+    {
+      "idDrink": "11118",
+      "strDrink": "Blue Margarita",
+      "strInstructions": "Rub rim of cocktail glass with lime juice. Dip rim in coarse salt. Shake tequila, blue curacao, and lime juice with ice, strain into the salt-rimmed glass, and serve.",
+      "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/bry4qh1582751040.jpg",
+      "strIngredient1": "Tequila",
+      "strIngredient2": "Blue Curacao",
+      "strIngredient3": "Lime juice",
+      "strIngredient4": "Salt",
+      "strIngredient5": null,
+      "strIngredient6": null,
+      "strIngredient7": null,
+      "strIngredient8": null,
+      "strIngredient9": null,
+      "strIngredient10": null,
+      "strIngredient11": null,
+      "strIngredient12": null,
+      "strIngredient13": null,
+      "strIngredient14": null,
+      "strIngredient15": null
+    }
+  ]
+}
