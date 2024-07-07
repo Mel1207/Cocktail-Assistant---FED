@@ -11,9 +11,11 @@ body
   background: $cWhite-10
 
 main 
-  height: 100vh
+  margin-top: 80px
+  height: calc( 100vh - 80px )
   display: grid
-  grid-template-columns: 280px 1fr
+  padding-left: 280px
+  padding-right: 280px
 
 .container 
   width: 100%
@@ -23,7 +25,6 @@ main
 
 .content 
   padding-top: 30px
-  padding-right: 280px
 
 .top-content 
   display: flex
@@ -112,6 +113,9 @@ input
     font-size: 14px
     line-height: 22px
 
+  .btn-primary 
+    margin-left: auto
+
 .cart-item-list 
   .cart-item 
     display: block 
@@ -123,3 +127,7 @@ input
     justify-content: space-between
     align-items: center
     border-radius: 10px
+
+  button 
+    img 
+      margin-top: 5px

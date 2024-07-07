@@ -1,5 +1,6 @@
 import React from 'react'
 import { useCartStore } from '../store/cartStore'
+import iconDelete from '../assets/icon-delete.svg'
 
 const SidebarRight = () => {
   const { cart, removeFromCart } = useCartStore()
@@ -11,7 +12,7 @@ const SidebarRight = () => {
         {cart.map((item, index) => (
           <div key={index} className='cart-item'>
             <p>{item}</p>
-            <button onClick={() => removeFromCart(index)}>Delete item</button>
+            <button onClick={() => removeFromCart(index)}><img src={iconDelete} alt="delete" /></button>
           </div>
         ))}
       </div>
