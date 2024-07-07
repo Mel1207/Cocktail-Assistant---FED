@@ -2,7 +2,27 @@ import { create } from "zustand"
 
 export const useCartStore = create((set) => ({
   cart: [], 
-  AddToCart: (ingredient) => set((state) => ({cart: [...state.cart, ingredient]})),
-  removeFromCart: (item) => set((state) => ({cart: state.cart.filter(item => cart.item !== item)}))
+  addToCart: (item) => {
+    // console.log('this one was added to cart')
+    const newIngredients = []
+
+    for(let i = 1; i <= 15; i++) {
+      const ingredient = item[`strIngredient${i}`]
+
+      if(ingredient && !newIngredients.includes(ingredient)) {
+        newIngredients.push(ingredient)
+      }
+    }
+
+    set(state => {
+      const uniqueIngredients = [...new Set([...state.cart, ...newIngredients])]
+      return { cart: uniqueIngredients }
+    })
+    
+  },
+  removeFromCart: (item) => {
+    console.log(`${item} was removed`)
+  }
+  
 }))
 

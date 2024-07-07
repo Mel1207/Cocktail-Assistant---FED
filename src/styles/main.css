@@ -48,6 +48,12 @@
   border-left: 1px solid rgba(0, 0, 0, 0.1);
   padding: 30px 20px;
 }
+.sidebar-right span {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: block;
+}
 
 .navbar {
   height: 80px;
@@ -214,6 +220,18 @@ input::placeholder {
   margin-bottom: 25px;
   font-size: 14px;
   line-height: 22px;
+}
+
+.cart-item-list .cart-item {
+  display: block;
+  width: 100%;
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */
