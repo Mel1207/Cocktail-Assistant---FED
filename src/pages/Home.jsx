@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react'
 import IconSearch from '../assets/icon-search.svg'
 import { useDrinkStore } from '../store/drinkStore';
 import { useCartStore } from '../store/cartStore';
