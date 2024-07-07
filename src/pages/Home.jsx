@@ -3,8 +3,19 @@ import { useDrinkStore } from '../store/drinkStore';
 import { useCartStore } from '../store/cartStore';
 
 const Home = () => {
-  const { handleSearchDrink, drinks } = useDrinkStore()
+  const { handleSearchDrink, drinks, inputValue, setInputValue } = useDrinkStore()
   const { addToCart } = useCartStore()
+
+  const handleInputChange = e => {
+    setInputValue(e.target.value)
+    // console.log(inputValue)
+  }
+
+  const handleSearch = () => {
+    handleSearchDrink(inputValue)
+    setInputValue('')
+  }
+
 
   return (
     <div className='content'>
@@ -14,10 +25,9 @@ const Home = () => {
           <p>What do you want to order?</p>
         </div>
         <div className="search">
-          <input type='text' placeholder='Search...'/>
-          <button type='button' className='btn btn-primary' onClick={ handleSearchDrink }>
-            <img src={IconSearch} alt="search" />
-            Search
+          <input type='text' placeholder='Search...' value={ inputValue } onChange={ handleInputChange }/>
+          <button type='button' className='btn btn-primary' onClick={handleSearch}>
+            <img src={IconSearch} alt="search" />Search
           </button>
         </div>
       </div>

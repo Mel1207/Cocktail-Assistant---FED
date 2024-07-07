@@ -2,8 +2,10 @@ import { create } from "zustand"
 
 export const useDrinkStore = create(set => ({
   drinks: [],
-  handleSearchDrink: async () => {
-    const response = await fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
+  inputValue: '',
+  setInputValue: (value) => set({inputValue: value}), 
+  handleSearchDrink: async (inputValue) => {
+    const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputValue}`)
     if(!response.status === 200) {
       console.log('searching')
     }
@@ -13,9 +15,8 @@ export const useDrinkStore = create(set => ({
     // if(!response.status === 200) {
     //   console.log('searching')
     // }
-    console.log('test from store')
-  }
-
+  
+  },
 }))
 
 // try {
