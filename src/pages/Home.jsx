@@ -1,39 +1,33 @@
 import React, { useState, useEffect } from 'react'
 import IconSearch from '../assets/icon-search.svg'
+import { useDrinkStore } from '../store/drinkStore';
 
 const Home = () => {
-  const [drinks, setDrinks] = useState([]);
   const [ingredientList, setIngredientList] = useState([])
+  const { handleSearchDrink, drinks } = useDrinkStore()
 
-
-  const handleSearch = async () => {
-    
-    try {
-      const response = await fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
-      if(!response.status === 200) {
-        console.log('searching')
-      }
-      const data = await response.json()
-      setDrinks(data.drinks)
-      console.log(data.drinks)
-    } catch (error) {
-      console.log('error fetching data', error)
-    }
-  }
-
-  const handleAddToShop = (item) => {
+  const handleAddToShop = (drink) => {
     console.log('item added')
-    const extractedIngredients = []
+    const newIngredients = [];
 
     for(let i = 1; i <= 15; i++) {
-      const ingredient = item[`strIngredient${i}`]
+      const ingredient = drink[`strIngredient${i}`]
 
-      if(ingredient) {
-        extractedIngredients.push(ingredient)
+      if (ingredient && !newIngredients.includes(ingredient)) {
+        newIngredients.push(ingredient);
       }
+
     }
 
-    setIngredientList(extractedIngredients)
+    setIngredientList((prevIngredients) => {
+      const uniqueIngredients = [...new Set([...prevIngredients, ...newIngredients])]
+      return uniqueIngredients
+    })
+
+    // const unique = Array.from(new Set(ingredientList.map(ingredient => 
+    //   ingredient.toLowerCase().replace(/\b\w/g, char => char.toUpperCase())
+    // )));
+    // setIngredientList(unique)
   }
 
   
@@ -49,7 +43,7 @@ const Home = () => {
         </div>
         <div className="search">
           <input type='text' placeholder='Search...'/>
-          <button type='button' className='btn btn-primary' onClick={handleSearch}>
+          <button type='button' className='btn btn-primary' onClick={ handleSearchDrink }>
             <img src={IconSearch} alt="search" />
             Search
           </button>
@@ -64,6 +58,8 @@ const Home = () => {
                 <p className='drink-title'>{item.strDrink}</p>
                 <span className='drink-category'>{item.strCategory}</span>
                 <p className='drink-instructions'>{item.strInstructions}</p>
+
+                <h3>Ingredients</h3>
                 <p>{item.strIngredient1}</p>
                 <p>{item.strIngredient2}</p>
                 <p>{item.strIngredient3}</p>
