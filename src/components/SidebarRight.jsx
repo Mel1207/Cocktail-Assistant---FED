@@ -4,6 +4,7 @@ import iconDelete from '../assets/icon-delete.svg'
 import { useGlobalStore } from '../store/globalStore'
 
 const SidebarRight = () => {
+  // HOOKS CALL
   const { cart, removeFromCart } = useCartStore()
   const { openModal } = useGlobalStore()
 

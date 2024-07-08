@@ -4,19 +4,19 @@ import { useCartStore } from '../store/cartStore';
 import iconSearch from '../assets/search.png'
 
 const Home = () => {
+  // HOOKS CALL
   const { handleSearchDrink, drinks, inputValue, setInputValue } = useDrinkStore()
   const { addToCart } = useCartStore()
 
+  // FUNCTIONS
   const handleInputChange = e => {
     setInputValue(e.target.value)
-    // console.log(inputValue)
   }
 
   const handleSearch = () => {
     handleSearchDrink(inputValue)
     setInputValue('')
   }
-
 
   return (
     <div className='content'>

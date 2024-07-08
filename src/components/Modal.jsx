@@ -6,10 +6,9 @@ import iconCheck from '../assets/icon-check.svg'
 import iconEmpty from '../assets/icon-empty.svg'
 
 const Modal = () => {
+  // HOOKS CALL
   const { closeModal } = useGlobalStore()
   const { cart } = useCartStore()
-
-  console.log(cart.length)
 
   return (
     <div className='modal-container'>
