@@ -74,6 +74,7 @@ input
 .drink-card 
   background: $cWhite
   width: 100%
+  min-height: 400px
   padding: 20px
   border-radius: 10px
   margin-bottom: 20px
@@ -82,24 +83,35 @@ input
   -moz-box-shadow: 4px 4px 30px 0px rgba(255,150,91,0.03)
   display: flex 
   gap: 20px
+  align-items: stretch
 
   h3 
     font-size: 14px
     margin-bottom: 12px
+
   .drink-thumbnail
-    height: 400px
+    height: auto
+    flex-grow: stre
     width: 245px
     border-radius: 10px
     object-fit: cover
 
   .drink-details
     width: 100%
-    // background: red
+    display: flex 
+    flex-direction: column 
+    justify-content: space-between
 
   .drink-title
     font-size: 22px
     font-weight: bold
     margin-bottom: 2px
+
+  ul 
+    list-style: none 
+
+    li 
+      margin-bottom: 10px
 
   .drink-category
     font-size: 14px

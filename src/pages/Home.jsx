@@ -37,27 +37,19 @@ const Home = () => {
             <div className='drink-card' key={item.idDrink}>
               <img src={item.strDrinkThumb} alt={item.strDrink} className='drink-thumbnail'/>
               <div className='drink-details'>
-                <p className='drink-title'>{item.strDrink}</p>
-                <span className='drink-category'>{item.strCategory}</span>
-                <p className='drink-instructions'>{item.strInstructions}</p>
+                <div>
+                  <p className='drink-title'>{item.strDrink}</p>
+                  <span className='drink-category'>{item.strCategory}</span>
+                  <p className='drink-instructions'>{item.strInstructions}</p>
 
-                <h3>Ingredients</h3>
-                <p>{item.strIngredient1}</p>
-                <p>{item.strIngredient2}</p>
-                <p>{item.strIngredient3}</p>
-                <p>{item.strIngredient4}</p>
-                <p>{item.strIngredient5}</p>
-                <p>{item.strIngredient6}</p>
-                <p>{item.strIngredient7}</p>
-                <p>{item.strIngredient8}</p>
-                <p>{item.strIngredient9}</p>
-                <p>{item.strIngredient10}</p>
-                <p>{item.strIngredient11}</p>
-                <p>{item.strIngredient12}</p>
-                <p>{item.strIngredient13}</p>
-                <p>{item.strIngredient14}</p>
-                <p>{item.strIngredient15}</p>
-                {/* <button className='btn btn-primary' onClick={() => handleAddToShop(item)}>Add to shopping list</button> */}
+                  <h3>Ingredients</h3>
+                  <ul>
+                    {Array.from({ length: 15 }).map((_, index) => {
+                      const ingredient = item[`strIngredient${index + 1}`]
+                      return ingredient ? <li key={index}>{ingredient}</li> : null
+                    })}
+                  </ul>
+                </div>
                 <button className='btn btn-primary' onClick={() => addToCart(item) }>Add to shopping list</button>
               </div>
             </div>
