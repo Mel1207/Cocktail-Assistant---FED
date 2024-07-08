@@ -1,6 +1,7 @@
 import IconSearch from '../assets/icon-search.svg'
 import { useDrinkStore } from '../store/drinkStore';
 import { useCartStore } from '../store/cartStore';
+import iconSearch from '../assets/search.png'
 
 const Home = () => {
   const { handleSearchDrink, drinks, inputValue, setInputValue } = useDrinkStore()
@@ -32,29 +33,37 @@ const Home = () => {
         </div>
       </div>
       <div className="container">
-        <div className="bottom-content">
-          {drinks.map(item => (
-            <div className='drink-card' key={item.idDrink}>
-              <img src={item.strDrinkThumb} alt={item.strDrink} className='drink-thumbnail'/>
-              <div className='drink-details'>
-                <div>
-                  <p className='drink-title'>{item.strDrink}</p>
-                  <span className='drink-category'>{item.strCategory}</span>
-                  <p className='drink-instructions'>{item.strInstructions}</p>
+        {drinks.length === 0 ? (
+          <div className='empty-search'> 
+            <img src={iconSearch} alt="Icon search" />
+            <p>Start searching for a drink</p>
+          </div>
+        ):(
+          <div className="bottom-content">
+            {drinks.map(item => (
+              <div className='drink-card' key={item.idDrink}>
+                <img src={item.strDrinkThumb} alt={item.strDrink} className='drink-thumbnail'/>
+                <div className='drink-details'>
+                  <div>
+                    <p className='drink-title'>{item.strDrink}</p>
+                    <span className='drink-category'>{item.strCategory}</span>
+                    <p className='drink-instructions'>{item.strInstructions}</p>
 
-                  <h3>Ingredients</h3>
-                  <ul>
-                    {Array.from({ length: 15 }).map((_, index) => {
-                      const ingredient = item[`strIngredient${index + 1}`]
-                      return ingredient ? <li key={index}>{ingredient}</li> : null
-                    })}
-                  </ul>
+                    <h3>Ingredients</h3>
+                    <ul>
+                      {Array.from({ length: 15 }).map((_, index) => {
+                        const ingredient = item[`strIngredient${index + 1}`]
+                        return ingredient ? <li key={index}>{ingredient}</li> : null
+                      })}
+                    </ul>
+                  </div>
+                  <button className='btn btn-primary' onClick={() => addToCart(item) }>Add to shopping list</button>
                 </div>
-                <button className='btn btn-primary' onClick={() => addToCart(item) }>Add to shopping list</button>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
+        
       </div>
     </div>
     

@@ -356,4 +356,20 @@ input::placeholder {
   margin-top: 5px;
 }
 
+.empty-search {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.empty-search img {
+  height: 50px;
+  width: 50px;
+  margin-bottom: 10px;
+}
+.empty-search p {
+  color: #5E5E5E;
+}
+
 /*# sourceMappingURL=main.css.map */
