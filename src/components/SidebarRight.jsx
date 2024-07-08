@@ -1,9 +1,11 @@
 import React from 'react'
 import { useCartStore } from '../store/cartStore'
 import iconDelete from '../assets/icon-delete.svg'
+import { useGlobalStore } from '../store/globalStore'
 
 const SidebarRight = () => {
   const { cart, removeFromCart } = useCartStore()
+  const { openModal } = useGlobalStore()
 
   return (
     <div className='sidebar-right'>
@@ -18,7 +20,7 @@ const SidebarRight = () => {
           ))}
         </div>
       </div>
-      <button className='btn btn-primary'>Print Shopping list</button>
+      <button className='btn btn-primary' onClick={ openModal }>Print Shopping list</button>
     </div>
   )
 }

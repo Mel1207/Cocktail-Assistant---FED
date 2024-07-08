@@ -6,22 +6,39 @@
   left: 0
   right: 0
   bottom: 0
-  background: rgba($cBlack, .30)
+  background: rgba($cBlack, .40)
   display: flex 
   align-items: center
   justify-content: center
+  z-index: 10
 
   .modal 
     height: 400px
-    width: 400px
+    width: 450px
     background: $cWhite 
     border-radius: 10px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
 
   .modal-title 
-    padding: 15px
+    padding: 20px
+    display: flex 
+    align-items: center
+    justify-content: space-between
 
   .modal-body 
-    padding: 0 15px
+    padding: 0 20px
+
+    h3
+      font-size: 18px
+      margin-bottom: 5px
+
+    p 
+      font-size: 14px
+      color: $cBlack-30
 
   .modal-footer 
-    padding: 15px
+    padding: 20px
+    display: flex 
+    justify-content: space-between

@@ -4,10 +4,13 @@ import SidebarRight from "./components/SidebarRight"
 import { Route, Routes } from "react-router-dom"
 import Home from "./pages/Home"
 import Modal from "./components/Modal"
+import { useGlobalStore } from "./store/globalStore"
 
 
 
 function App() {
+  const { isModalOpen } = useGlobalStore()
+
   return (
     <main>
       <Sidebar />
@@ -18,7 +21,7 @@ function App() {
         </Routes>
       </div>
       <SidebarRight />
-      <Modal />
+      {isModalOpen ? (<Modal />) : null}
     </main>
   )
 }
