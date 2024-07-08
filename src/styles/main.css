@@ -50,9 +50,12 @@
   right: 0;
   top: 80px;
   width: 280px;
-  height: 100%;
+  height: calc(100vh - 80px);
   border-left: 1px solid rgba(0, 0, 0, 0.1);
   padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .sidebar-right span {
   font-size: 22px;
@@ -264,6 +267,8 @@ input::placeholder {
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
 }
 .cart-item-list button img {
   margin-top: 5px;

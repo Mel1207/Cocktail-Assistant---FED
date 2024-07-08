@@ -7,16 +7,18 @@ const SidebarRight = () => {
 
   return (
     <div className='sidebar-right'>
-      <span>Shopping List</span>
-      <div className="cart-item-list">
-        {cart.map((item, index) => (
-          <div key={index} className='cart-item'>
-            <p>{item}</p>
-            <button onClick={() => removeFromCart(index)}><img src={iconDelete} alt="delete" /></button>
-          </div>
-        ))}
+      <div>
+        <span>Shopping List</span>
+        <div className="cart-item-list">
+          {cart.map((item, index) => (
+            <div key={index} className='cart-item'>
+              <p>{item}</p>
+              <button onClick={() => removeFromCart(index)}><img src={iconDelete} alt="delete" /></button>
+            </div>
+          ))}
+        </div>
       </div>
-      
+      <button className='btn btn-primary'>Print Shopping list</button>
     </div>
   )
 }
